@@ -4,6 +4,7 @@ export const CustomerList = () => {
   const [totalNumberOfCustomers, updateCustomersNumber] = useState("");
 
   useEffect(() => {
+    // console.log("Initial useEffect");
     fetch("http://localhost:8088/customers").then(res =>
       res.json().then(customerArray => {
         changeCustomers(customerArray);
@@ -12,6 +13,7 @@ export const CustomerList = () => {
   }, []);
 
   useEffect(() => {
+    // console.log("Customers state change", customers);
     if (customers.length === 1) {
       updateCustomersNumber("You have one customer");
     } else {
