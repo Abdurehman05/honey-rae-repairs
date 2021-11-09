@@ -21,7 +21,7 @@ export const CustomerList = () => {
   return (
     <>
       <div>{totalNumberOfCustomers}</div>
-      {customers.map(customerObject => {
+      {customers.slice(0, 2).map(customerObject => {
         return (
           <p key={`customer--${customerObject.id}`}>
             {customerObject.name}
