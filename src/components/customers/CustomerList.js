@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 export const CustomerList = () => {
   const [customers, changeCustomers] = useState([]);
+  const [totalNumberOfCustomers, updateCustomersNumber] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:8088/customers").then(res =>
@@ -9,8 +10,17 @@ export const CustomerList = () => {
       })
     );
   }, []);
+
+  useEffect(() => {
+    if (customers.length === 1) {
+      updateCustomersNumber("You have one customer");
+    } else {
+      updateCustomersNumber(`You have ${customers.length} customers`);
+    }
+  }, [customers]);
   return (
     <>
+      <div>{totalNumberOfCustomers}</div>
       {customers.map(customerObject => {
         return (
           <p key={`customer--${customerObject.id}`}>
