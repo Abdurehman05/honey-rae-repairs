@@ -15,7 +15,7 @@ export const EmployeeList = () => {
     const specialties = employees.map(
       employeeObject => employeeObject.specialty
     );
-    changeSpecialties(specialties.join(","));
+    changeSpecialties(specialties.join(" | "));
   }, [employees]);
   return (
     <>
