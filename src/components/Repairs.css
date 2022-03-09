@@ -5,12 +5,15 @@
 /*Typography
 --------------------------------------------------------------*/
 
-body,
+body {
+    background-color: bisque;
+}
+
 button,
 input,
 select,
 textarea {
-    color: #404040;
+    color: #8a2424;
     font-family: "Comfortaa", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
